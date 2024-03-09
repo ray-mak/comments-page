@@ -31,16 +31,20 @@ main {
     background-color: var(--light-gray);
 }
 
-.comment-container {
+.main-container {
     width: 50%;
+    margin-bottom: 80px;
 }
 
-.comment-box {
+
+.parent-comment, .personal-comment {
     width: 100%; 
     display: flex;
     background-color: var(--white);
     padding: 16px;
     border-radius: 8px;
+    margin-top: 24px;
+
 }
 
 .vote-container {
@@ -107,31 +111,120 @@ main {
     color: var(--grayish-blue)
 }
 
-.reply-container {
+.reply-container, .edit-container {
     display: flex;
     align-items: center;
     margin-left: auto;
 }
 
-.reply-container:hover{
+.edit-btn-container, .delete-container {
+    display: flex;
+    align-items: center;
+}
+
+.reply-container:hover, .reply-btn:hover, .edit-btn-container:hover, .delete-container:hover{
     opacity: .7;
     cursor: pointer;
 }
 
-.reply-icon {
+.reply-icon, .edit-icon, .delete-icon {
     margin-right: 8px;
 }
 
-.reply {
+.edit-icon {
+    margin-left: 20px;
+}
+
+.reply, .edit {
     color: var(--grayish-blue);
     font-weight: 500;
 }
+
+.delete {
+    color: var(--soft-red);
+    font-weight: 500;
+}
+
+
 
 .comment {
     width: 100%;
     color: var(--grayish-blue);
     line-height: 1.5;
     margin-top: 12px;
+}
+
+.message-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px;
+    width: 100%;
+    background-color: var(--white);
+    margin-top: 12px;
+    border-radius: 8px;
+}
+
+.text-input {
+    width: 80%;
+    resize: none;
+    min-height: 120px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--light-gray);
+    outline: none;
+    margin: 0 12px 0 12px;
+}
+
+.response:focus {
+    border: 1px solid var(--dark-blue);
+}
+
+.reply-btn {
+    width: 100px;
+    height: 50px;
+    background-color: var(--moderate-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.response-container {
+    width: 100%;
+    display: flex;
+    margin-top: 24px;
+}
+
+.vertical-container {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-div {
+    width: 2px;
+    height: 100%;
+    background-color: var(--light-grayish-blue);
+    opacity: .2;
+}
+
+.replies-container {
+    width: 90%;
+
+}
+
+.child.parent-comment {
+    margin-top: 0;
+}
+
+.you {
+    color: var(--white);
+    background-color: var(--moderate-blue);
+    margin-left: 12px;
+    padding: 2px 8px 2px 8px;
+    border-radius: 2%;
+    font-size: .8rem;
 }
 
 @media screen and (max-width: 880px) {
@@ -153,7 +246,7 @@ main {
         display: none;
     }
 
-    .comment-box {
+    .parent-comment {
         flex-direction: column-reverse;
     }
 

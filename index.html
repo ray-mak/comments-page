@@ -36,7 +36,13 @@
             <div class="message-container">
                 <img class="profile-pic" src="images/avatars/image-juliusomo.png" alt="profile picture"/>
                 <textarea class="text-input" type="text" placeholder="Add a comment..."></textarea> 
-                <button type="button" class="reply-btn">REPLY</button>
+                <div class="reply-delete"> 
+                    <button type="button" class="reply-btn">REPLY</button>
+                    <div class="delete-container">
+                        <image class="delete-icon" src="images/icon-delete.svg" alt="delete icon"/>
+                        <div class="delete">Delete</div>
+                    </div>
+                </div>
             </div>
             <div class="parent-comment">
                 <div class="vote-container">
@@ -91,17 +97,29 @@
                     </div>
                     <div class="message-container">
                         <img class="profile-pic" src="images/avatars/image-juliusomo.png" alt="profile picture"/>
-                        <textarea class="text-input" type="text" placeholder="Add a comment..."></textarea> 
-                        <button type="button" class="reply-btn">REPLY</button>
+                        <textarea class="text-input" type="text" placeholder="Add a comment..."></textarea>
+                        <div class="reply-delete"> 
+                            <button type="button" class="reply-btn">REPLY</button>
+                            <div class="delete-container">
+                                <image class="delete-icon" src="images/icon-delete.svg" alt="delete icon"/>
+                                <div class="delete">Delete</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="personal-comment">
                         <div class="vote-container">
                             <div class="plus">+</div>
                             <div class="counter">0</div>
                             <div class="minus">-</div>
-                            <div class="reply-container">
-                                <image class="reply-icon" src="images/icon-reply.svg" alt="reply icon"/>
-                                <div class="reply">Reply</div>
+                            <div class="mobile edit-container">
+                                <div class="delete-container">
+                                    <image class="delete-icon" src="images/icon-delete.svg" alt="delete icon"/>
+                                    <div class="delete">Delete</div>
+                                </div>
+                                <div class="edit-btn-container">
+                                    <image class="edit-icon" src="images/icon-edit.svg" alt="edit icon"/>
+                                    <div class="edit">Edit</div>
+                                </div>    
                             </div>
                         </div>
                         <div class="info-container">
@@ -125,6 +143,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="send-message-container">
+                <img class="profile-pic" src="images/avatars/image-juliusomo.png" alt="profile picture"/>
+                <textarea class="text-input" type="text" placeholder="Add a comment..."></textarea> 
+                <button type="button" class="reply-btn">SEND</button>
             </div>
         </div>
     </main>

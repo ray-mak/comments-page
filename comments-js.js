@@ -109,7 +109,7 @@ mainContainer.addEventListener("click", (e) => {
                 <img class="profile-pic" src="images/avatars/image-juliusomo.png" alt="profile picture"/>
                 <div class="username">juliusomo</div>
                 <div class="you">you</div>
-                <div class="time">2 days ago</div>
+                <div class="time">${timeAgo(Date.now())}</div>
                 <div class="edit-container">
                     <div class="delete-container">
                         <image class="delete-icon" src="images/icon-delete.svg" alt="delete icon"/>
@@ -170,3 +170,69 @@ mainContainer.addEventListener("click", (e) => {
         infoContainer.appendChild(comment);
     }
 })
+
+//send comment
+const sendBox = document.querySelector(".send-message-container");
+const sendBtn = document.querySelector(".send-btn");
+
+sendBtn.addEventListener("click", () => {
+    const inputValue = sendBox.querySelector(".text-input").value;
+    const parentComment = document.createElement("div");
+    parentComment.classList.add('personal-comment');
+    parentComment.innerHTML += `
+    <div class="vote-container">
+        <div class="plus">+</div>
+        <div class="counter">0</div>
+        <div class="minus">-</div>
+        <div class="mobile edit-container">
+            <div class="delete-container">
+                <image class="delete-icon" src="images/icon-delete.svg" alt="delete icon"/>
+                <div class="delete">Delete</div>
+            </div>
+            <div class="edit-btn-container">
+                <image class="edit-icon" src="images/icon-edit.svg" alt="edit icon"/>
+                <div class="edit">Edit</div>
+            </div>    
+        </div>
+    </div>
+    <div class="info-container">
+        <div class="user-container">
+            <img class="profile-pic" src="images/avatars/image-juliusomo.png" alt="profile picture"/>
+            <div class="username">juliusomo</div>
+            <div class="you">you</div>
+            <div class="time">${timeAgo(Date.now())}</div>
+            <div class="edit-container">
+                <div class="delete-container">
+                    <image class="delete-icon" src="images/icon-delete.svg" alt="delete icon"/>
+                    <div class="delete">Delete</div>
+                </div>
+                <div class="edit-btn-container">
+                    <image class="edit-icon" src="images/icon-edit.svg" alt="edit icon"/>
+                    <div class="edit">Edit</div>
+                </div>    
+            </div>
+        </div>
+        <div class="comment">${inputValue}</div>
+    </div>`
+    sendBox.insertAdjacentElement("beforebegin", parentComment);
+})
+
+//time function
+
+const timeAgo = (time) => {
+    const currentTime = new Date();
+    const posted = new Date(time);
+    const timeDifference = currentTime - posted;
+    const msPerMinute = 1000 * 60;
+    const minutesAgo = Math.floor(timeDifference / msPerMinute);
+    const hoursAgo = Math.floor(minutesAgo / 60);
+    const daysAgo = Math.floor(hoursAgo / 24);
+
+    if (minutesAgo < 60) {
+        return `${minutesAgo} min ago`;
+    }
+    if (hoursAgo < 24) {
+        return `${hoursAgo} hours ago`;
+    }
+    return `${daysAgo} days ago`
+}

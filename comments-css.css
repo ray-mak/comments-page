@@ -126,7 +126,7 @@ main {
     align-items: center;
 }
 
-.reply-container:hover, .reply-btn:hover, .update-btn:hover, .edit-btn-container:hover, .delete-container:hover{
+.reply-container:hover, .reply-btn:hover, .update-btn:hover, .edit-btn-container:hover, .delete-container:hover, .send-btn:hover{
     opacity: .7;
     cursor: pointer;
 }
@@ -202,7 +202,7 @@ main {
     border: 1px solid var(--dark-blue);
 }
 
-.reply-btn, .update-btn {
+.reply-btn, .update-btn, .send-btn {
     width: 100px;
     height: 50px;
     background-color: var(--moderate-blue);
@@ -351,7 +351,7 @@ main {
 
     }
 
-    .reply-btn, .reply-delete {
+    .reply-btn, .reply-delete, .send-btn {
         grid-column-start: 3;
         margin-left: auto;
     }
